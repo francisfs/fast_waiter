@@ -1,11 +1,12 @@
+import 'package:fast_waiter/splash.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    home: Home(),
+  runApp(const MyApp(
+    //home: Home(),
 
-    debugShowCheckedModeBanner: false, //retirar a barra debug
+    //debugShowCheckedModeBanner: false, //retirar a barra debug
   ));
 }
