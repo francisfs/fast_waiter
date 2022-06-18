@@ -18,8 +18,9 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Atm Consultoria"),
-        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: Text("Cardapio Eletronico"),
+        backgroundColor: Color.fromARGB(255, 237, 153, 6),
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
