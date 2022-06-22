@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:fast_waiter/home1%20copy.dart';
+import 'package:fast_waiter/home_page.dart';
 import 'package:fast_waiter/home1.dart';
-import 'package:fast_waiter/home.dart';
+import 'package:fast_waiter/home0.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';

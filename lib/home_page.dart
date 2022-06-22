@@ -14,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         backgroundColor: Color.fromARGB(0, 216, 83, 22),
         elevation: 0,
         /*leading: IconButton(
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage2> {
             onPressed: () {},
           )*
         ],*/
-      ),
+      ),*/
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -442,12 +442,12 @@ class _MyHomePageState extends State<MyHomePage2> {
                   Icon(
                     Icons.star,
                     size: 20,
-                    color: Colors.orange,
+                    color: Colors.white,
                   ),
                   Icon(
                     Icons.star,
                     size: 20,
-                    color: Colors.orange,
+                    color: Colors.white,
                   ),
                 ],
               ),
