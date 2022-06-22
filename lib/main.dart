@@ -1,22 +1,21 @@
-
+import 'package:fast_waiter/home1%20copy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'splash.dart';
 
 
+
 void main() {
-
-  WidgetsFlutterBinding.ensureInitialized();
-  
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
-     SystemUiOverlay.bottom, //This line is used for showing the bottom bar
-  ]);
-
-
+  //WidgetsFlutterBinding.ensureInitialized();
+  // widget para ocultar o status bar
+  //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
+    //SystemUiOverlay.bottom, //esta linha exibe a barra inferior
+  //]
+ // );
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug
-    home: SplashScreen(),
+    home: (MyHomePage2()),
   ));
 }

@@ -2,6 +2,7 @@ import 'package:fast_waiter/opcao1.dart';
 import 'package:fast_waiter/opcao2.dart';
 import 'package:fast_waiter/opcao3.dart';
 import 'package:flutter/material.dart';
+import 'Style.dart';
 import 'opcao4.dart';
 
 class Home1 extends StatefulWidget {
@@ -35,14 +36,20 @@ class _HomeState extends State<Home1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 243, 2, 2),
+      backgroundColor: Color.fromARGB(255, 250, 249, 249),
       appBar: AppBar(
-        title: const Text("Opção Única"),
-        backgroundColor: Color.fromARGB(255, 252, 214, 0),
+        title: const Text("Cardapio Digital",textAlign: TextAlign.center,),
+        
+        
+        backgroundColor: Color.fromARGB(0, 252, 214, 0),
       ),
+      
       body: Container(
+        
        
         padding: const EdgeInsets.all(6),
+        
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
