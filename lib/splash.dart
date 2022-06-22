@@ -2,11 +2,14 @@ import 'dart:async';
 import 'package:fast_waiter/home1.dart';
 import 'package:fast_waiter/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+
 
 class SplashScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => InitState();
+  
 }
 
 class InitState extends State<SplashScreen> {
@@ -29,6 +32,7 @@ class InitState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return initWidget();
+    
   }
 
   Widget initWidget() {
