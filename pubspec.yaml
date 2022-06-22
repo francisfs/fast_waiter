@@ -73,10 +73,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - imagens/feijoada.png
-     - imagens/burguer.png
+     - imagens/hamburguer.png
      - imagens/frango.png
      - imagens/yakisoba.png
-     - imagens/bife_fritas.png
+     - imagens/logo.png
     
 
 

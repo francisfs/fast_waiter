@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
               children: [
                 GestureDetector(
                   //onTap: _abriCliente,
-                  child: Image.asset("imagens/bife_fritas.png"),
+                  child: Image.asset("imagens/hamburguer.png"),
                 ),
                 const SizedBox(
                   width: 25,
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                 ),
                 GestureDetector(
                   //onTap: _abriContato,
-                  child: Image.asset("imagens/burguer.png"),
+                  child: Image.asset("imagens/frango.png"),
                 ),
                 const SizedBox(
                   width: 25,

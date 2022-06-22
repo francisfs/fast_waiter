@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:fast_waiter/home1.dart';
 import 'package:fast_waiter/home.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -22,7 +23,7 @@ class InitState extends State<SplashScreen> {
 
   homeRoute() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Home()));
+        context, MaterialPageRoute(builder: (context) => Home1()));
   }
 
   @override
@@ -37,10 +38,10 @@ class InitState extends State<SplashScreen> {
           Container(
             decoration: BoxDecoration(
                 color: new Color(0xffF5591f),
-                gradient: LinearGradient(
-                    colors: [(new Color(0xffF5591f)), (new Color(0xffF2861E))],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter)),
+                gradient: LinearGradient(colors: [
+                  (new Color(0xffF5591f)),
+                  (Color.fromARGB(255, 245, 233, 2))
+                ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           ),
           Center(
             child: Container(

@@ -12,7 +12,7 @@ class _Opcao1State extends State<Opcao1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Opacao 1"),
+        title: Text("Opcao 1"),
       ),
     );
   }
