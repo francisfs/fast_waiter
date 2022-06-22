@@ -4,15 +4,13 @@ import 'package:flutter/services.dart';
 
 import 'splash.dart';
 
-
-
 void main() {
   //WidgetsFlutterBinding.ensureInitialized();
   // widget para ocultar o status bar
   //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
-    //SystemUiOverlay.bottom, //esta linha exibe a barra inferior
+  //SystemUiOverlay.bottom, //esta linha exibe a barra inferior
   //]
- // );
+  // );
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug

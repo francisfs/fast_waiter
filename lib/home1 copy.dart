@@ -15,9 +15,9 @@ class _MyHomePageState extends State<MyHomePage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(0, 245, 78, 1),
+        backgroundColor: Color.fromARGB(0, 216, 83, 22),
         elevation: 0,
-        leading: IconButton(
+        /*leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
             color: black,
@@ -33,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage2> {
               color: Colors.black,
             ),
             onPressed: () {},
-          )
-        ],
+          )*
+        ],*/
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -47,17 +47,17 @@ class _MyHomePageState extends State<MyHomePage2> {
                   height: 20,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Especial do dia",
+                      "Cardápio Digital",
                       style:
                           TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
                     ),
                     Container(
                       child: Column(
                         children: [
-                          Container(
+                          /*  Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 25, vertical: 10),
                             decoration: BoxDecoration(
@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage2> {
                                     bottomRight: Radius.circular(20),
                                     bottomLeft: Radius.circular(20)),
                                 color: greenBtn.withOpacity(0.7)),
-                          )
+                          )*/
                         ],
                       ),
                     )
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage2> {
                   height: 10,
                 ),
                 Text(
-                  "Encontre as melhores refeições da região!",
+                  "Especialidades da casa em destaque",
                   style: TextStyle(
                     color: Color.fromARGB(159, 152, 155, 182),
                     fontSize: 25,
@@ -388,15 +388,15 @@ class _MyHomePageState extends State<MyHomePage2> {
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("hotel1", "Sushi Den"),
+                placesWidget("hamburguer", "Hamburguer"),
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("hotel2", "Hatsuhana Sushi"),
+                placesWidget("carne", "Costela Assada com fritas"),
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("hotel3", "Sushi Maaki"),
+                placesWidget("bebidas", "Bebidas"),
               ],
             ),
           ),
@@ -412,8 +412,7 @@ class _MyHomePageState extends State<MyHomePage2> {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("asset/images/$img.png"))),
+              image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(
@@ -452,10 +451,6 @@ class _MyHomePageState extends State<MyHomePage2> {
                   ),
                 ],
               ),
-              Text(
-                "Lorem ipsum sits dolar amet is for publishing",
-                style: TextStyle(fontSize: 12),
-              )
             ],
           ),
         ),

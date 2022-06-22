@@ -38,29 +38,30 @@ class _HomeState extends State<Home1> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 250, 249, 249),
       appBar: AppBar(
-        title: const Text("Cardapio Digital",textAlign: TextAlign.center,),
-        
-        
+        title: const Text(
+          "Cardapio Digital",
+          textAlign: TextAlign.center,
+        ),
         backgroundColor: Color.fromARGB(0, 252, 214, 0),
       ),
-      
       body: Container(
-        
-       
         padding: const EdgeInsets.all(6),
-        
-        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("imagens/logo.png",width: 120,height: 120,alignment:Alignment.topCenter,),
-            
+            Image.asset(
+              "imagens/logo.png",
+              width: 120,
+              height: 120,
+              alignment: Alignment.topCenter,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
                   onTap: _abrirOpcao1,
-                  child: Image.asset("imagens/yakisoba.png",width: 150,height: 220),
+                  child: Image.asset("imagens/yakisoba.png",
+                      width: 150, height: 220),
                 ),
                 SizedBox(
                   height: 15,
@@ -68,7 +69,11 @@ class _HomeState extends State<Home1> {
                 ),
                 GestureDetector(
                   onTap: _abrirOpcao2,
-                  child: Image.asset("imagens/hamburguer.png",width: 210,height: 210,),
+                  child: Image.asset(
+                    "imagens/hamburguer.png",
+                    width: 210,
+                    height: 210,
+                  ),
                 ),
               ],
             ),
@@ -81,7 +86,8 @@ class _HomeState extends State<Home1> {
               children: [
                 GestureDetector(
                   onTap: _abrirOpcao3,
-                  child: Image.asset("imagens/feijoada.png",width: 180,height: 210),
+                  child: Image.asset("imagens/feijoada.png",
+                      width: 180, height: 210),
                 ),
                 const SizedBox(
                   height: 15,
@@ -89,7 +95,8 @@ class _HomeState extends State<Home1> {
                 ),
                 GestureDetector(
                   onTap: _abrirOpcao4,
-                  child: Image.asset("imagens/frango.png",width: 160,height: 180),
+                  child: Image.asset("imagens/frango.png",
+                      width: 160, height: 180),
                 ),
               ],
             )
