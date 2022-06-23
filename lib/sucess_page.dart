@@ -1,7 +1,11 @@
 import 'package:fast_waiter/Style.dart';
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 class SuccessPage extends StatelessWidget {
+  const SuccessPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,7 +53,9 @@ class _successPageState extends State<successPage> {
                           Icons.arrow_back,
                           color: Colors.white,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          return_page_home();
+                        },
                       ),
                       IconButton(
                         icon: Icon(
@@ -165,4 +171,9 @@ class _successPageState extends State<successPage> {
       ),
     );
   }
+void return_page_home() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
 }

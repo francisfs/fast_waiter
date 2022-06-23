@@ -3,7 +3,7 @@ import 'package:fast_waiter/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'splash.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +16,6 @@ void main() {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug
-    home: (MyHomePage2()),
+    home: (HomePage()),
   ));
 }

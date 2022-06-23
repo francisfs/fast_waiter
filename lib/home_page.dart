@@ -1,18 +1,15 @@
-import 'package:fast_waiter/card_page.dart';
+import 'package:fast_waiter/cards/card_hamb.dart';
 import 'package:fast_waiter/opcao1.dart';
-import 'package:fast_waiter/opcao2.dart';
-import 'package:fast_waiter/opcao3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'Style.dart';
-import 'opcao4.dart';
 
-class MyHomePage2 extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage2> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -482,6 +479,7 @@ class _MyHomePageState extends State<MyHomePage2> {
   }
 
   void openHotelPage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageH()));
   }
 }

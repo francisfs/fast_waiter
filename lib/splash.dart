@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:fast_waiter/home_page.dart';
-import 'package:fast_waiter/home1.dart';
-import 'package:fast_waiter/home0.dart';
+import 'package:fast_waiter/modelo_ant/home1.dart';
+import 'package:fast_waiter/modelo_ant/home0.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
@@ -25,7 +25,7 @@ class InitState extends State<SplashScreen> {
 
   homeRoute() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MyHomePage2()));
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override

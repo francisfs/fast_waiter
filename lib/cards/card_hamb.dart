@@ -1,24 +1,25 @@
 import 'package:fast_waiter/Style.dart';
+import 'package:fast_waiter/home_page.dart';
 import 'package:flutter/material.dart';
 
-import 'sucess_page.dart';
+import '../sucess_page.dart';
 
-class CartPage extends StatelessWidget {
+class CartPageH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: cartPage(),
+      home: cartPageH(),
     );
   }
 }
 
-class cartPage extends StatefulWidget {
+class cartPageH extends StatefulWidget {
   @override
   _cartPageState createState() => _cartPageState();
 }
 
-class _cartPageState extends State<cartPage> {
+class _cartPageState extends State<cartPageH> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class _cartPageState extends State<cartPage> {
                 decoration: BoxDecoration(
                     color: blue,
                     image: DecorationImage(
-                        image: AssetImage("asset/images/hotelBig.png"),
+                        image: AssetImage("imagens/hamburguer.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -51,7 +52,9 @@ class _cartPageState extends State<cartPage> {
                             Icons.arrow_back,
                             color: Colors.white,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            return_page_home();
+                          },
                         ),
                         IconButton(
                           icon: Icon(
@@ -75,7 +78,7 @@ class _cartPageState extends State<cartPage> {
                               height: 20,
                             ),
                             Text(
-                              "Yoshimasa Sushi",
+                              "Hamburguer",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -400,5 +403,10 @@ class _cartPageState extends State<cartPage> {
   void openSuccessPage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SuccessPage()));
+  }
+
+  void return_page_home() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 }

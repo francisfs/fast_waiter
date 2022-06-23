@@ -2,8 +2,8 @@ import 'package:fast_waiter/opcao1.dart';
 import 'package:fast_waiter/opcao2.dart';
 import 'package:fast_waiter/opcao3.dart';
 import 'package:flutter/material.dart';
-import 'Style.dart';
-import 'opcao4.dart';
+import '../Style.dart';
+import '../opcao4.dart';
 
 class Home1 extends StatefulWidget {
   const Home1({Key? key}) : super(key: key);

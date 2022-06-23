@@ -1,14 +1,14 @@
 import 'package:fast_waiter/opcao1.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Home0 extends StatefulWidget {
+  const Home0({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Home0> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home0> {
   void _abriOpcao1() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Opcao1()));
   }
