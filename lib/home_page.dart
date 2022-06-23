@@ -392,7 +392,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text(""),
                   height: 20,
                 ),
-                placesWidget("carne", "Costela Assada"),
+                placesWidget("costela", "Costela Assada"),
                 SizedBox(
                   height: 20,
                 ),
