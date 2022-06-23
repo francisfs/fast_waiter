@@ -2,6 +2,7 @@ import 'package:fast_waiter/opcao1.dart';
 import 'package:fast_waiter/opcao2.dart';
 import 'package:fast_waiter/opcao3.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'Style.dart';
 import 'opcao4.dart';
 
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage2> {
                   "Especialidades da casa em destaque",
                   style: TextStyle(
                     color: Color.fromARGB(159, 152, 155, 182),
-                    fontSize: 25,
+                    fontSize: 23,
                   ),
                 ),
                 SizedBox(
@@ -130,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage2> {
                                   spreadRadius: 0,
                                   offset: Offset(0, 10),
                                   blurRadius: 0,
-                                  color: blue.withOpacity(0.4))
+                                  color: gold.withOpacity(0.4))
                             ]),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage2> {
                               "Yakissoba Clássico com carne e frango, legumes frescos e champignons",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 13),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -390,13 +391,14 @@ class _MyHomePageState extends State<MyHomePage2> {
                 ),
                 placesWidget("hamburguer", "Hamburguer"),
                 SizedBox(
+                  child: Text(""),
                   height: 20,
                 ),
-                placesWidget("carne", "Costela Assada com fritas"),
+                placesWidget("carne", "Costela Assada"),
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("bebidas", "Bebidas"),
+                placesWidget("bebidas", " Bebidas"),
               ],
             ),
           ),
@@ -451,6 +453,10 @@ class _MyHomePageState extends State<MyHomePage2> {
                   ),
                 ],
               ),
+              /*Text(
+                "Lorem ipsum sits dolar amet is for publishing",
+                style: TextStyle(fontSize: 12),
+              )*/
             ],
           ),
         ),
@@ -462,7 +468,7 @@ class _MyHomePageState extends State<MyHomePage2> {
                 borderRadius: BorderRadius.all(Radius.circular(40)),
                 color: greenBtn),
             child: Text(
-              "Order Now",
+              "Adicionar",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
