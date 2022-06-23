@@ -1,3 +1,4 @@
+import 'package:fast_waiter/card_page.dart';
 import 'package:fast_waiter/opcao1.dart';
 import 'package:fast_waiter/opcao2.dart';
 import 'package:fast_waiter/opcao3.dart';
@@ -481,6 +482,6 @@ class _MyHomePageState extends State<MyHomePage2> {
   }
 
   void openHotelPage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Opcao1()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
   }
 }
