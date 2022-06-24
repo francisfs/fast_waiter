@@ -5,8 +5,7 @@ import 'package:fast_waiter/cards/card_frang.dart';
 import 'package:fast_waiter/cards/card_hamb.dart';
 import 'package:fast_waiter/cards/card_yaki.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+
 import 'Style.dart';
 
 class HomePage extends StatefulWidget {
@@ -80,12 +79,17 @@ class _HomePageState extends State<HomePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                    "imagens/yakisoba.png",
-                                  )),
+                              child: GestureDetector(
+                                onTap: () {
+                                  cardRoutY();
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                      "imagens/yakisoba.png",
+                                    )),
+                                  ),
                                 ),
                               ),
                             ),
@@ -172,11 +176,16 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Expanded(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                "imagens/frango.png"))),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      cardRoutFr();
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  "imagens/frango.png"))),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -250,11 +259,16 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Expanded(
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    "imagens/feijoada.png"))),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          cardRoutF();
+                                        },
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "imagens/feijoada.png"))),
+                                        ),
                                       ),
                                     ),
                                     SizedBox(

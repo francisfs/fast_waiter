@@ -1,5 +1,6 @@
 import 'package:fast_waiter/Style.dart';
 import 'package:fast_waiter/home_page.dart';
+import 'package:fast_waiter/precos.dart';
 import 'package:flutter/material.dart';
 
 import '../sucess_page.dart';
@@ -31,7 +32,7 @@ class _cartPageState extends State<cartPageH> {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 3, 250, 238),
+                    color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
                         image: AssetImage("imagens/hamburguer.png"),
                         fit: BoxFit.cover),
@@ -186,12 +187,12 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total (3 items)",
+                          "Total ($qtd items)",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 18),
                         ),
                         Text(
-                          "R\$ 45,00",
+                          "R\$ $vlrTotal",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 16),
                         )
@@ -270,7 +271,7 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total a Pagar",
+                          "Total a Pagar $vlrTotal",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
@@ -322,6 +323,7 @@ class _cartPageState extends State<cartPageH> {
   }
 
   int qtd = 0;
+  double vlrTotal = 0;
   Row placesWidget(String img, String name) {
     return Row(
       children: [
@@ -384,6 +386,8 @@ class _cartPageState extends State<cartPageH> {
           onTap: () {
             setState(() {
               qtd++;
+              vlrTotal = vl_hamb * qtd;
+
               print("teste");
             });
           },

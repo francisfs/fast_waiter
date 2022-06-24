@@ -174,11 +174,11 @@ class _cartPageState extends State<cartPageFr> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("sushi", "Row Platter"),
+                    placesWidget("frango", "Row Platter"),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("suchi2", "Sushi Platter"),
+                    placesWidget("frango", "Sushi Platter"),
                     SizedBox(
                       height: 5,
                     ),
