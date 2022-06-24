@@ -31,7 +31,7 @@ class _cartPageState extends State<cartPageH> {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: blue,
+                    color: Color.fromARGB(255, 3, 250, 238),
                     image: DecorationImage(
                         image: AssetImage("imagens/hamburguer.png"),
                         fit: BoxFit.cover),
@@ -174,11 +174,11 @@ class _cartPageState extends State<cartPageH> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("sushi", "Row Platter"),
+                    placesWidget("hamburguer", " Platter"),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("suchi2", "Sushi Platter"),
+                    placesWidget("bebidas", " Platter"),
                     SizedBox(
                       height: 5,
                     ),
@@ -328,8 +328,7 @@ class _cartPageState extends State<cartPageH> {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("asset/images/$img.png"))),
+              image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(

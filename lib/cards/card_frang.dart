@@ -31,7 +31,7 @@ class _cartPageState extends State<cartPageFr> {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: blue,
+                    color: Colors.blueGrey,
                     image: DecorationImage(
                         image: AssetImage("imagens/frango.png"),
                         fit: BoxFit.cover),
@@ -329,7 +329,7 @@ class _cartPageState extends State<cartPageFr> {
           width: 100,
           decoration: BoxDecoration(
               image:
-                  DecorationImage(image: AssetImage("asset/images/$img.png"))),
+                  DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(

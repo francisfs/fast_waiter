@@ -155,7 +155,7 @@ class _cartPageState extends State<cartPageB> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Your Cart",
+                          "-----",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),
@@ -174,11 +174,11 @@ class _cartPageState extends State<cartPageB> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("sushi", "Row Platter"),
+                    placesWidget("bebidas", "Coca-Cola"),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("suchi2", "Sushi Platter"),
+                    placesWidget("******", "******"),
                     SizedBox(
                       height: 5,
                     ),
@@ -204,7 +204,7 @@ class _cartPageState extends State<cartPageB> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxes",
+                          "+Taxas",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -226,7 +226,7 @@ class _cartPageState extends State<cartPageB> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Delivery Charges",
+                          "+Taxa de serviço",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -248,7 +248,7 @@ class _cartPageState extends State<cartPageB> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Discounts",
+                          "Descontos",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -270,7 +270,7 @@ class _cartPageState extends State<cartPageB> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total Payable",
+                          "Total a Pagar",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
@@ -289,7 +289,7 @@ class _cartPageState extends State<cartPageB> {
                       height: 25,
                     ),
                     Text(
-                      "Have a Promo Code?",
+                      "Possui um Código Promocional?",
                       style: TextStyle(color: blue),
                     ),
                     SizedBox(
@@ -328,8 +328,7 @@ class _cartPageState extends State<cartPageB> {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("asset/images/$img.png"))),
+              image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(

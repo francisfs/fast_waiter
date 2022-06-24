@@ -1,4 +1,5 @@
 import 'package:fast_waiter/home_page.dart';
+import 'package:fast_waiter/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -13,6 +14,7 @@ void main() {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug
-    home: (HomePage()),
+    home: (SplashScreen()),
   ));
 }
+//(HomePage()),

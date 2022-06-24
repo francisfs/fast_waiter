@@ -31,7 +31,7 @@ class _cartPageState extends State<cartPageF> {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: blue,
+                    color: Colors.tealAccent,
                     image: DecorationImage(
                         image: AssetImage("imagens/feijoada.png"),
                         fit: BoxFit.cover),

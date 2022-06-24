@@ -328,8 +328,7 @@ class _cartPageState extends State<cartPageY> {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("asset/images/$img.png"))),
+              image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(

@@ -79,7 +79,7 @@ class _successPageState extends State<successPage> {
                             height: 20,
                           ),
                           Text(
-                            "Yoshimasa Sushi",
+                            "Parabéns",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -155,7 +155,7 @@ class _successPageState extends State<successPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Done!, Tasty food, Your Way!",
+                        "Pedido realizado com sucesso!",
                         style: TextStyle(
                             color: greenBtn,
                             fontSize: 20,
@@ -171,9 +171,9 @@ class _successPageState extends State<successPage> {
       ),
     );
   }
-void return_page_home() {
+
+  void return_page_home() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
   }
-
 }
