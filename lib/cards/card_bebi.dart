@@ -111,7 +111,7 @@ class _cartPageState extends State<cartPageB> {
                                   color: Colors.white,
                                 ),
                                 Text(
-                                  " 250 Reviews",
+                                  " 250 Avaliações",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 13),
                                 )
@@ -305,7 +305,7 @@ class _cartPageState extends State<cartPageB> {
                           color: greenBtn,
                         ),
                         child: Text(
-                          "Check Out",
+                          "Confirmar",
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w700),
                         ),
@@ -380,7 +380,7 @@ class _cartPageState extends State<cartPageB> {
         Row(
           children: [
             Text(
-              "Quantity ",
+              "Quantidade ",
               style: TextStyle(fontSize: 14, color: black),
             ),
             Container(

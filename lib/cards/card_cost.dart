@@ -155,7 +155,7 @@ class _cartPageState extends State<cartPageC> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Your Cart",
+                          "Seu Pedigo",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),
@@ -174,11 +174,11 @@ class _cartPageState extends State<cartPageC> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("costela", "Row Platter"),
+                    placesWidget("costela", "*************"),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("costela", "Sushi Platter"),
+                    placesWidget("bebidas", "********"),
                     SizedBox(
                       height: 5,
                     ),
@@ -204,7 +204,7 @@ class _cartPageState extends State<cartPageC> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxes",
+                          "+Taxas",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -226,7 +226,7 @@ class _cartPageState extends State<cartPageC> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Delivery Charges",
+                          "+Taxas de serviço",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -248,7 +248,7 @@ class _cartPageState extends State<cartPageC> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Discounts",
+                          "Descontos",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -270,7 +270,7 @@ class _cartPageState extends State<cartPageC> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total Payable",
+                          "Total a pagar",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
@@ -289,7 +289,7 @@ class _cartPageState extends State<cartPageC> {
                       height: 25,
                     ),
                     Text(
-                      "Have a Promo Code?",
+                      "Possui um codigo promocional?",
                       style: TextStyle(color: blue),
                     ),
                     SizedBox(
@@ -305,7 +305,7 @@ class _cartPageState extends State<cartPageC> {
                           color: greenBtn,
                         ),
                         child: Text(
-                          "Check Out",
+                          "Confirmar",
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w700),
                         ),
@@ -328,8 +328,7 @@ class _cartPageState extends State<cartPageC> {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("imagens/$img.png"))),
+              image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(
@@ -381,7 +380,7 @@ class _cartPageState extends State<cartPageC> {
         Row(
           children: [
             Text(
-              "Quantity ",
+              "Quantidade ",
               style: TextStyle(fontSize: 14, color: black),
             ),
             Container(

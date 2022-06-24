@@ -289,7 +289,7 @@ class _cartPageState extends State<cartPageFr> {
                       height: 25,
                     ),
                     Text(
-                      "Have a Promo Code?",
+                      "Possui um codigo promocional?",
                       style: TextStyle(color: blue),
                     ),
                     SizedBox(
@@ -305,7 +305,7 @@ class _cartPageState extends State<cartPageFr> {
                           color: greenBtn,
                         ),
                         child: Text(
-                          "Check Out",
+                          "Confirmar",
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w700),
                         ),
@@ -328,8 +328,7 @@ class _cartPageState extends State<cartPageFr> {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("imagens/$img.png"))),
+              image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
           child: Column(
@@ -381,7 +380,7 @@ class _cartPageState extends State<cartPageFr> {
         Row(
           children: [
             Text(
-              "Quantity ",
+              "Quantidade ",
               style: TextStyle(fontSize: 14, color: black),
             ),
             Container(

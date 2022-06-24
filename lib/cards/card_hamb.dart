@@ -111,7 +111,7 @@ class _cartPageState extends State<cartPageH> {
                                   color: Colors.white,
                                 ),
                                 Text(
-                                  " 250 Reviews",
+                                  " 250 Avaliações",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 13),
                                 )
@@ -155,7 +155,7 @@ class _cartPageState extends State<cartPageH> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Your Cart",
+                          "Seu Pedido",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),
@@ -174,11 +174,11 @@ class _cartPageState extends State<cartPageH> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("hamburguer", " Platter"),
+                    placesWidget("hamburguer", " Humburguer"),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("bebidas", " Platter"),
+                    placesWidget("bebidas", " Bebida"),
                     SizedBox(
                       height: 5,
                     ),
@@ -191,7 +191,7 @@ class _cartPageState extends State<cartPageH> {
                               fontWeight: FontWeight.w700, fontSize: 18),
                         ),
                         Text(
-                          "\$45",
+                          "R\$ 45,00",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 16),
                         )
@@ -204,14 +204,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxes",
+                          "+Taxas",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "\$2.1",
+                          "R\$ 2,00",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -226,14 +226,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Delivery Charges",
+                          "+Taxas de serviço",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "\$3.1",
+                          "R\$ 3,10",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -248,14 +248,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Discounts",
+                          "Desconto",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "-\$6.1",
+                          "R\$ 6,19",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -270,14 +270,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total Payable",
+                          "Total a Pagar",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
                           ),
                         ),
                         Text(
-                          "\$102",
+                          "R\$ 102,00",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -289,7 +289,7 @@ class _cartPageState extends State<cartPageH> {
                       height: 25,
                     ),
                     Text(
-                      "Have a Promo Code?",
+                      "Possui um codigo promocional?",
                       style: TextStyle(color: blue),
                     ),
                     SizedBox(
@@ -305,7 +305,7 @@ class _cartPageState extends State<cartPageH> {
                           color: greenBtn,
                         ),
                         child: Text(
-                          "Check Out",
+                          "Confirmar",
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w700),
                         ),
@@ -321,6 +321,7 @@ class _cartPageState extends State<cartPageH> {
     );
   }
 
+  int qtd = 0;
   Row placesWidget(String img, String name) {
     return Row(
       children: [
@@ -368,7 +369,7 @@ class _cartPageState extends State<cartPageH> {
                 ],
               ),
               Text(
-                "Lorem ipsum sits dolar amet is for publishing",
+                "",
                 style: TextStyle(fontSize: 12),
               )
             ],
@@ -377,10 +378,23 @@ class _cartPageState extends State<cartPageH> {
         SizedBox(
           width: 10,
         ),
+        GestureDetector(
+          /////////////////////////////ICONE INCREMENTO
+          child: Icon(Icons.add_circle),
+          onTap: () {
+            setState(() {
+              qtd++;
+              print("teste");
+            });
+          },
+        ),
+        SizedBox(
+          width: 15,
+        ),
         Row(
           children: [
             Text(
-              "Quantity ",
+              "Quantidade ",
               style: TextStyle(fontSize: 14, color: black),
             ),
             Container(
@@ -389,7 +403,7 @@ class _cartPageState extends State<cartPageH> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                "1",
+                "$qtd",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),

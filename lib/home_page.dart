@@ -18,28 +18,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        backgroundColor: Color.fromARGB(0, 216, 83, 22),
-        elevation: 0,
-        /*leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: black,
-            size: 27,
-          ),
-          onPressed: () {},
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              size: 27,
-              color: Colors.black,
-            ),
-            onPressed: () {},
-          )*
-        ],*/
-      ),*/
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -60,45 +38,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       child: Column(
-                        children: [
-                          /*  Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 25, vertical: 10),
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(25)),
-                                color: greenBtn),
-                            child: Center(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.add_shopping_cart,
-                                    color: Colors.white,
-                                    size: 18,
-                                  ),
-                                  Text(
-                                    " Comprar",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w700),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 40, vertical: 5),
-                            margin: EdgeInsets.symmetric(horizontal: 10),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                    bottomRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20)),
-                                color: greenBtn.withOpacity(0.7)),
-                          )*/
-                        ],
+                        children: [],
                       ),
                     )
                   ],
@@ -517,6 +457,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            Text("")
           ]),
         ),
         /*InkWell(
