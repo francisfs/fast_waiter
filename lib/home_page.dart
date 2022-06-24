@@ -142,9 +142,11 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                               child: Container(
                                 decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "imagens/yakisoba.png"))),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                    "imagens/yakisoba.png",
+                                  )),
+                                ),
                               ),
                             ),
                             SizedBox(
