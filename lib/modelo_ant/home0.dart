@@ -1,4 +1,4 @@
-import 'package:fast_waiter/opcao1.dart';
+import 'package:fast_waiter/cards/card_feijo.dart';
 import 'package:flutter/material.dart';
 
 class Home0 extends StatefulWidget {
@@ -10,7 +10,8 @@ class Home0 extends StatefulWidget {
 
 class _HomeState extends State<Home0> {
   void _abriOpcao1() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Opcao1()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageF()));
   }
 
   @override

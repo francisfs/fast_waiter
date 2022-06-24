@@ -111,7 +111,7 @@ class _cartPageState extends State<cartPageC> {
                                   color: Colors.white,
                                 ),
                                 Text(
-                                  " 250 Reviews",
+                                  " 250 Avaliações",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 13),
                                 )
@@ -155,7 +155,7 @@ class _cartPageState extends State<cartPageC> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Seu Pedigo",
+                          "Seu Pedido",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),

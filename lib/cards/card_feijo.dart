@@ -111,7 +111,7 @@ class _cartPageState extends State<cartPageF> {
                                   color: Colors.white,
                                 ),
                                 Text(
-                                  " 250 Reviews",
+                                  " 250 Avaliações",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 13),
                                 )
@@ -155,7 +155,7 @@ class _cartPageState extends State<cartPageF> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Your Cart",
+                          "Seu pedido",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),
@@ -174,11 +174,11 @@ class _cartPageState extends State<cartPageF> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("sushi", "Row Platter"),
+                    placesWidget("feijoada", "+++ Platter"),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("suchi2", "Sushi Platter"),
+                    placesWidget("feijoada", "+++ Platter"),
                     SizedBox(
                       height: 5,
                     ),
@@ -204,7 +204,7 @@ class _cartPageState extends State<cartPageF> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxes",
+                          "+taxas",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -226,7 +226,7 @@ class _cartPageState extends State<cartPageF> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Delivery Charges",
+                          "+taxa de serviço",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -248,7 +248,7 @@ class _cartPageState extends State<cartPageF> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Discounts",
+                          "Descontos",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -270,7 +270,7 @@ class _cartPageState extends State<cartPageF> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total Payable",
+                          "Total a Pagar",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
@@ -289,7 +289,7 @@ class _cartPageState extends State<cartPageF> {
                       height: 25,
                     ),
                     Text(
-                      "Have a Promo Code?",
+                      "Possui um código promocional?",
                       style: TextStyle(color: blue),
                     ),
                     SizedBox(
@@ -305,7 +305,7 @@ class _cartPageState extends State<cartPageF> {
                           color: greenBtn,
                         ),
                         child: Text(
-                          "Check Out",
+                          "Confirmar",
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w700),
                         ),
@@ -381,7 +381,7 @@ class _cartPageState extends State<cartPageF> {
         Row(
           children: [
             Text(
-              "Quantity ",
+              "Quantidade ",
               style: TextStyle(fontSize: 14, color: black),
             ),
             Container(

@@ -111,7 +111,7 @@ class _cartPageState extends State<cartPageFr> {
                                   color: Colors.white,
                                 ),
                                 Text(
-                                  " 250 Reviews",
+                                  " 250 Avaliações",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 13),
                                 )
@@ -155,7 +155,7 @@ class _cartPageState extends State<cartPageFr> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Your Cart",
+                          "Seu pedido",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),
@@ -204,7 +204,7 @@ class _cartPageState extends State<cartPageFr> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxes",
+                          "+taxas",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -226,7 +226,7 @@ class _cartPageState extends State<cartPageFr> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Delivery Charges",
+                          "+taxa de serviço",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -248,7 +248,7 @@ class _cartPageState extends State<cartPageFr> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Discounts",
+                          "Descontos",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -270,7 +270,7 @@ class _cartPageState extends State<cartPageFr> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total Payable",
+                          "Total a Pagar",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,

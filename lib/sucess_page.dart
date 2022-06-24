@@ -112,7 +112,7 @@ class _successPageState extends State<successPage> {
                                 color: Colors.white,
                               ),
                               Text(
-                                " 250 Reviews",
+                                " 250 Avaliações",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 13),
                               )
