@@ -1,6 +1,11 @@
+import 'package:fast_waiter/cards/card_bebi.dart';
+import 'package:fast_waiter/cards/card_cost.dart';
+import 'package:fast_waiter/cards/card_feijo.dart';
+import 'package:fast_waiter/cards/card_frang.dart';
 import 'package:fast_waiter/cards/card_hamb.dart';
-import 'package:fast_waiter/opcao1.dart';
+import 'package:fast_waiter/cards/card_yaki.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'Style.dart';
 
@@ -281,6 +286,7 @@ class _HomePageState extends State<HomePage> {
                             height: 20,
                           ),
                           Column(
+                            // segunda coluna
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.35,
@@ -377,6 +383,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Expanded(
                       child: Container(
+                        alignment: Alignment.bottomRight,
                         margin: EdgeInsets.symmetric(horizontal: 20),
                         height: 0.5,
                         color: Colors.grey,
@@ -388,6 +395,23 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 placesWidget("hamburguer", "Hamburguer"),
+                InkWell(
+                  //botão adcionar
+                  onTap: cardRoutH,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(40)),
+                        color: greenBtn),
+                    child: Text(
+                      "Adicionar",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                ),
                 SizedBox(
                   child: Text(""),
                   height: 20,
@@ -396,7 +420,47 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
+                InkWell(
+                  //botão adcionar
+                  onTap: cardRoutC,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(40)),
+                        color: greenBtn),
+                    child: Text(
+                      "Adicionar",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 placesWidget("bebidas", " Bebidas"),
+                InkWell(
+                  //botão adcionar
+                  onTap: cardRoutB,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(40)),
+                        color: greenBtn),
+                    child: Text(
+                      "Adicionar",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),
@@ -409,56 +473,52 @@ class _HomePageState extends State<HomePage> {
     return Row(
       children: [
         Container(
-          height: 100,
-          width: 100,
+          height: 250,
+          width: 250,
           decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "$name",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.orange,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.white,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-              /*Text(
-                "Lorem ipsum sits dolar amet is for publishing",
-                style: TextStyle(fontSize: 12),
-              )*/
-            ],
-          ),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(
+              "$name",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            Row(
+              // contem os icones estrelas
+              children: [
+                Icon(
+                  Icons.star,
+                  size: 20,
+                  color: Colors.orange,
+                ),
+                Icon(
+                  Icons.star,
+                  size: 20,
+                  color: Colors.orange,
+                ),
+                Icon(
+                  Icons.star,
+                  size: 20,
+                  color: Colors.orange,
+                ),
+                Icon(
+                  Icons.star,
+                  size: 20,
+                  color: Color.fromARGB(255, 31, 21, 21),
+                ),
+                Icon(
+                  Icons.star,
+                  size: 20,
+                  color: Color.fromARGB(255, 26, 13, 13),
+                ),
+              ],
+            ),
+          ]),
         ),
-        InkWell(
+        /*InkWell(
+          //botão adcionar
           onTap: openHotelPage,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -473,13 +533,38 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.w700),
             ),
           ),
-        )
+        ),*/
       ],
     );
   }
 
-  void openHotelPage() {
+  void cardRoutB() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageB()));
+  }
+
+  void cardRoutC() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageC()));
+  }
+
+  void cardRoutF() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageF()));
+  }
+
+  void cardRoutFr() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageFr()));
+  }
+
+  void cardRoutH() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => cartPageH()));
+  }
+
+  void cardRoutY() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => cartPageY()));
   }
 }
