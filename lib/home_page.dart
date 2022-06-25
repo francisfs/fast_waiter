@@ -351,23 +351,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 placesWidget("hamburguer", "Hamburguer"),
-                InkWell(
-                  //botão adcionar
-                  onTap: cardRoutH,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(40)),
-                        color: greenBtn),
-                    child: Text(
-                      "Adicionar",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ),
+                
                 SizedBox(
                   child: Text(""),
                   height: 20,
@@ -376,44 +360,12 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  //botão adcionar
-                  onTap: cardRoutC,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(40)),
-                        color: greenBtn),
-                    child: Text(
-                      "Adicionar",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ),
+                
                 SizedBox(
                   height: 20,
                 ),
                 placesWidget("bebidas", " Bebidas"),
-                InkWell(
-                  //botão adcionar
-                  onTap: cardRoutB,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(40)),
-                        color: greenBtn),
-                    child: Text(
-                      "Adicionar",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ),
+                
                 SizedBox(
                   height: 20,
                 ),
@@ -429,8 +381,8 @@ class _HomePageState extends State<HomePage> {
     return Row(
       children: [
         Container(
-          height: 250,
-          width: 250,
+          height: 200,
+          width: 180,
           decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),
@@ -474,9 +426,17 @@ class _HomePageState extends State<HomePage> {
             Text("")
           ]),
         ),
-        /*InkWell(
+        InkWell(
           //botão adcionar
-          onTap: openHotelPage,
+
+          onTap: () {
+            if (name == "Hamburguer") {
+              cardRoutH();
+            } else if (name == "Costela Assada") {
+              cardRoutC();
+            }
+          },
+
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
@@ -490,7 +450,7 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.w700),
             ),
           ),
-        ),*/
+        ),
       ],
     );
   }

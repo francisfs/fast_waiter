@@ -15,7 +15,7 @@ void main() {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug
-    home: (cartPageH()),
+    home: (HomePage()),
   ));
 }
 //(HomePage()),
