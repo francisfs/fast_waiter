@@ -1,3 +1,4 @@
+import 'package:fast_waiter/cards/card_hamb.dart';
 import 'package:fast_waiter/home_page.dart';
 import 'package:fast_waiter/splash.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ void main() {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug
-    home: (SplashScreen()),
+    home: (cartPageH()),
   ));
 }
 //(HomePage()),

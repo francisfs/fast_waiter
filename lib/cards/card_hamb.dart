@@ -23,6 +23,8 @@ class cartPageH extends StatefulWidget {
 class _cartPageState extends State<cartPageH> {
   @override
   Widget build(BuildContext context) {
+    var onPressed;
+    var child;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -139,8 +141,10 @@ class _cartPageState extends State<cartPageH> {
                       height: 15,
                     ),
                     Text(
-                      "Lorem ipsum dolar sits amet is used in print industry",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      "O melhor Hamburguer da região",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 213, 32, 32),
+                          fontSize: 12),
                     )
                   ],
                 ),
@@ -175,11 +179,11 @@ class _cartPageState extends State<cartPageH> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("hamburguer", " Humburguer"),
+                    placesWidget("hamburguer", "Hamburguer", vl_hamb, 0),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("bebidas", " Bebida"),
+                    placesWidget("bebidas", " Bebida", vl_bebida, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -187,7 +191,7 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total ($qtd items)",
+                          "Total ($qtdTotalItens items)",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 18),
                         ),
@@ -322,9 +326,12 @@ class _cartPageState extends State<cartPageH> {
     );
   }
 
-  int qtd = 0;
+  int qtdHamburguer = 0;
+  int qtdBebida = 0;
+  int qtdTotalItens = 0;
   double vlrTotal = 0;
-  Row placesWidget(String img, String name) {
+
+  Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
       children: [
         Container(
@@ -341,6 +348,7 @@ class _cartPageState extends State<cartPageH> {
                 "$name",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
+              Text(""),
               Row(
                 children: [
                   Icon(
@@ -371,7 +379,7 @@ class _cartPageState extends State<cartPageH> {
                 ],
               ),
               Text(
-                "",
+                "  $vlrItem",
                 style: TextStyle(fontSize: 12),
               )
             ],
@@ -385,10 +393,17 @@ class _cartPageState extends State<cartPageH> {
           child: Icon(Icons.add_circle),
           onTap: () {
             setState(() {
-              qtd++;
-              vlrTotal = vl_hamb * qtd;
+              double valorHamburguer = 0;
+              double valorBebida = 0;
 
-              print("teste");
+              if (name == "Hamburguer") {
+                qtdHamburguer++;
+                valorHamburguer = vl_hamb * qtdHamburguer;
+              } else {
+                qtdBebida++;
+                valorBebida = vl_bebida * qtdBebida;
+              }
+              qtdTotalItens = qtdBebida + qtdHamburguer;
             });
           },
         ),
@@ -407,7 +422,7 @@ class _cartPageState extends State<cartPageH> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                "$qtd",
+                name == "Hamburguer" ? "$qtdHamburguer" : "$qtdBebida",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
