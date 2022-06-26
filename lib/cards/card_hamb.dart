@@ -2,6 +2,7 @@ import 'package:fast_waiter/Style.dart';
 import 'package:fast_waiter/home_page.dart';
 import 'package:fast_waiter/precos.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../sucess_page.dart';
 
@@ -143,8 +144,7 @@ class _cartPageState extends State<cartPageH> {
                     Text(
                       "O melhor Hamburguer da região",
                       style: TextStyle(
-                          color: Color.fromARGB(255, 213, 32, 32),
-                          fontSize: 12),
+                          color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
                   ],
                 ),
@@ -179,11 +179,11 @@ class _cartPageState extends State<cartPageH> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("hamburguer", "Hamburguer", vl_hamb, 0),
+                    placesWidget("hamburguer", "Hamburguer", preco_hamb, 0),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("bebidas", " Bebida", vl_bebida, 0),
+                    placesWidget("bebidas", " Bebida", preco_bebida, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -191,12 +191,12 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total ($qtdTotalItens items)",
+                          "Total ($qtdTotalItens itens)",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 18),
                         ),
                         Text(
-                          "R\$ $vlrTotal",
+                          "R\$ $valorTotal",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 16),
                         )
@@ -209,14 +209,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxas",
+                          "+Taxa de entrega",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "R\$ 2,00",
+                          "R\$ 0,00",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -231,14 +231,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxas de serviço",
+                          "+Taxas de serviço (Opcional)",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "R\$ 3,10",
+                          "R\$ $ValorTaxaServico",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -275,14 +275,14 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total a Pagar $vlrTotal",
+                          "Total a Pagar = valor + taxas",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
                           ),
                         ),
                         Text(
-                          "R\$ 102,00",
+                          "R\$ ***",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -326,10 +326,14 @@ class _cartPageState extends State<cartPageH> {
     );
   }
 
+  ///DECLARAÇÃO DE VARIAVEIS
   int qtdHamburguer = 0;
   int qtdBebida = 0;
   int qtdTotalItens = 0;
-  double vlrTotal = 0;
+  double valorTotal = 0;
+  double ValorTaxaServico = 0;
+  double valorHamburguer = 0;
+  double valorBebida = 0;
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
@@ -348,7 +352,7 @@ class _cartPageState extends State<cartPageH> {
                 "$name",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
-              Text(""),
+              Text("*"),
               Row(
                 children: [
                   Icon(
@@ -391,6 +395,7 @@ class _cartPageState extends State<cartPageH> {
         GestureDetector(
           /////////////////////////////ICONE INCREMENTO
           child: Icon(Icons.add_circle),
+
           onTap: () {
             setState(() {
               double valorHamburguer = 0;
@@ -398,13 +403,16 @@ class _cartPageState extends State<cartPageH> {
 
               if (name == "Hamburguer") {
                 qtdHamburguer++;
-                valorHamburguer = vl_hamb * qtdHamburguer;
+                valorHamburguer = preco_hamb * qtdHamburguer;
               } else {
                 qtdBebida++;
-                valorBebida = vl_bebida * qtdBebida;
+                valorBebida = preco_bebida * qtdBebida;
               }
               qtdTotalItens = qtdBebida + qtdHamburguer;
+              valorTotal = valorHamburguer + valorBebida;
             });
+            ValorTaxaServico = valorTotal * 0.1;
+           
           },
         ),
         SizedBox(

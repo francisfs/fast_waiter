@@ -79,7 +79,7 @@ class _successPageState extends State<successPage> {
                             height: 20,
                           ),
                           Text(
-                            "Parabéns",
+                            "Parabéns pedido realizado com sucesso",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -112,7 +112,7 @@ class _successPageState extends State<successPage> {
                                 color: Colors.white,
                               ),
                               Text(
-                                " 250 Avaliações",
+                                "+",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 13),
                               )
@@ -127,8 +127,8 @@ class _successPageState extends State<successPage> {
                             shape: BoxShape.circle, color: Colors.white),
                         child: Center(
                           child: Icon(
-                            Icons.favorite,
-                            color: Colors.redAccent,
+                            Icons.sentiment_satisfied_alt,
+                            color: Color.fromARGB(255, 229, 212, 212),
                             size: 35,
                           ),
                         ),

@@ -351,7 +351,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 placesWidget("hamburguer", "Hamburguer"),
-                
+
                 SizedBox(
                   child: Text(""),
                   height: 20,
@@ -364,8 +364,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("bebidas", " Bebidas"),
-                
+                placesWidget("bebidas", "Bebidas"),
                 SizedBox(
                   height: 20,
                 ),
@@ -430,10 +429,16 @@ class _HomePageState extends State<HomePage> {
           //botão adcionar
 
           onTap: () {
-            if (name == "Hamburguer") {
-              cardRoutH();
-            } else if (name == "Costela Assada") {
-              cardRoutC();
+            switch (name) {
+              case 'Hamburguer':
+                cardRoutH();
+                break;
+              case 'Costela Assada':
+                cardRoutC();
+                break;
+              case 'Bebidas':
+                cardRoutB();
+                break;
             }
           },
 
