@@ -82,7 +82,7 @@ class _cartPageState extends State<cartPageH> {
                               height: 20,
                             ),
                             Text(
-                              "Hamburguer",
+                              "Hamburguer", //Texto da imagem
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -92,9 +92,11 @@ class _cartPageState extends State<cartPageH> {
                               height: 10,
                             ),
                             Row(
+                              //Estrelas de avaliações do do cabeçalho
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Icon(
+                                  //icones de estrela
                                   Icons.star,
                                   color: Colors.white,
                                 ),
@@ -130,7 +132,7 @@ class _cartPageState extends State<cartPageH> {
                               shape: BoxShape.circle, color: Colors.white),
                           child: Center(
                             child: Icon(
-                              Icons.favorite,
+                              Icons.favorite, //icone de favorito
                               color: Colors.redAccent,
                               size: 35,
                             ),
@@ -191,14 +193,56 @@ class _cartPageState extends State<cartPageH> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total ($qtdTotalItens itens)",
+                          "Quantidade Total:",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 18),
+                        ),
+                        Text(
+                          "$qtdTotalItens unidade(s)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 16),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Valor Parcial:",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 18),
                         ),
                         Text(
                           "R\$ $valorTotal",
                           style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 16),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "+Taxas de serviço 10% (Opcional)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.grey),
+                        ),
+                        Text(
+                          "R\$ $valorTaxaServico",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.grey),
                         )
                       ],
                     ),
@@ -216,11 +260,11 @@ class _cartPageState extends State<cartPageH> {
                               color: Colors.grey),
                         ),
                         Text(
-                          "R\$ 0,00",
+                          "Gratis",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
-                              color: Colors.grey),
+                              color: Color.fromARGB(255, 93, 173, 67)),
                         )
                       ],
                     ),
@@ -230,63 +274,26 @@ class _cartPageState extends State<cartPageH> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "+Taxas de serviço (Opcional)",
+                        /*Text(
+                          "R\$ ***",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
-                        ),
+                        )*/
                         Text(
-                          "R\$ $ValorTaxaServico",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: Colors.grey),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Desconto",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: Colors.grey),
-                        ),
-                        Text(
-                          "R\$ 6,19",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: Colors.grey),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Total a Pagar = valor + taxas",
+                          "Total a Pagar",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 18,
                           ),
                         ),
                         Text(
-                          "R\$ ***",
+                          "R\$ $valorTotal,00",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w700,
                               fontSize: 16,
-                              color: Colors.grey),
+                              color: Color.fromARGB(255, 237, 6, 6)),
                         )
                       ],
                     ),
@@ -315,7 +322,10 @@ class _cartPageState extends State<cartPageH> {
                               color: Colors.white, fontWeight: FontWeight.w700),
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                   ],
                 ),
               )
@@ -326,14 +336,17 @@ class _cartPageState extends State<cartPageH> {
     );
   }
 
+/////////////////////////////////////////////////////////////////////////////////
   ///DECLARAÇÃO DE VARIAVEIS
   int qtdHamburguer = 0;
   int qtdBebida = 0;
   int qtdTotalItens = 0;
   double valorTotal = 0;
-  double ValorTaxaServico = 0;
+  double valorTaxaServico = 0;
   double valorHamburguer = 0;
   double valorBebida = 0;
+  double valorDesconto = 0.10;
+//////////////////////////////////////////////////////////////////////////
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
@@ -383,7 +396,7 @@ class _cartPageState extends State<cartPageH> {
                 ],
               ),
               Text(
-                "  $vlrItem",
+                "  R\$ $vlrItem,00",
                 style: TextStyle(fontSize: 12),
               )
             ],
@@ -398,10 +411,8 @@ class _cartPageState extends State<cartPageH> {
 
           onTap: () {
             setState(() {
-              double valorHamburguer = 0;
-              double valorBebida = 0;
-
               if (name == "Hamburguer") {
+                
                 qtdHamburguer++;
                 valorHamburguer = preco_hamb * qtdHamburguer;
               } else {
@@ -409,10 +420,10 @@ class _cartPageState extends State<cartPageH> {
                 valorBebida = preco_bebida * qtdBebida;
               }
               qtdTotalItens = qtdBebida + qtdHamburguer;
-              valorTotal = valorHamburguer + valorBebida;
             });
-            ValorTaxaServico = valorTotal * 0.1;
-           
+
+            valorTotal = valorHamburguer + valorBebida;
+            valorTaxaServico = valorTotal * 0.1;
           },
         ),
         SizedBox(

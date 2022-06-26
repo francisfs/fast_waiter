@@ -228,6 +228,11 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.white,
                                       size: 14,
                                     ),
+                                    Text(
+                                      "Sabor e Crocância inigualáveis ",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 10),
+                                    ),
                                   ],
                                 ),
                               ],
@@ -351,7 +356,6 @@ class _HomePageState extends State<HomePage> {
                   height: 20,
                 ),
                 placesWidget("hamburguer", "Hamburguer"),
-
                 SizedBox(
                   child: Text(""),
                   height: 20,
@@ -360,7 +364,6 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                
                 SizedBox(
                   height: 20,
                 ),

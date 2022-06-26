@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:fast_waiter/home_page.dart';
 
 import 'package:fast_waiter/modelo_ant/home0.dart';
+import 'package:fast_waiter/qrcode_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
