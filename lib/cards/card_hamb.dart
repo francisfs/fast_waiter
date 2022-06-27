@@ -185,7 +185,7 @@ class _cartPageState extends State<cartPageH> {
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("bebidas", " Bebida", preco_bebida, 0),
+                    placesWidget("bebida", " Bebida", preco_bebida, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -407,12 +407,14 @@ class _cartPageState extends State<cartPageH> {
         ),
         GestureDetector(
           /////////////////////////////ICONE INCREMENTO
-          child: Icon(Icons.add_circle),
+          child: Icon(
+            Icons.add_circle,
+            size: 40,
+          ),
 
           onTap: () {
             setState(() {
               if (name == "Hamburguer") {
-                
                 qtdHamburguer++;
                 valorHamburguer = preco_hamb * qtdHamburguer;
               } else {
