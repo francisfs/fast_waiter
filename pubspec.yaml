@@ -79,11 +79,14 @@ flutter:
      - imagens/feijoada.png
      - imagens/hamburguer.png
      - imagens/frango.png
-     - imagens/yakisoba.png
      - imagens/logo.png
      - imagens/costela.png
-     - imagens/bebidas.png
-     - imagens/hotelBig.png
+     - imagens/bebida.png
+     - imagens/agua.png
+     - imagens/cerveja.png
+     - imagens/coca.png
+     - imagens/fanta.png
+  
     
 
 

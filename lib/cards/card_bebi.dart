@@ -37,7 +37,7 @@ class _cartPageState extends State<cartPageB> {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
-                        image: AssetImage("imagens/hamburguer.png"),
+                        image: AssetImage("imagens/bebida.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -144,7 +144,7 @@ class _cartPageState extends State<cartPageB> {
                       height: 15,
                     ),
                     Text(
-                      "O melhor Hamburguer da região",
+                      "**********************",
                       style: TextStyle(
                           color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
@@ -178,16 +178,21 @@ class _cartPageState extends State<cartPageB> {
                         )
                       ],
                     ),
+                    placesWidget("cerveja", "Heineken", preco_bebida, 0),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
-                    placesWidget("hamburguer", "Hamburguer", preco_hamb, 0),
+                    placesWidget("agua", "Agua", preco_hamb, 0),
                     SizedBox(
-                      height: 5,
+                      height: 15,
                     ),
-                    placesWidget("bebida", " Bebida", preco_bebida, 0),
+                    placesWidget("coca", "Coca-Cola", preco_bebida, 0),
                     SizedBox(
-                      height: 5,
+                      height: 15,
+                    ),
+                    placesWidget("fanta", "Fanta", preco_bebida, 0),
+                    SizedBox(
+                      height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -336,17 +341,25 @@ class _cartPageState extends State<cartPageB> {
     );
   }
 
-/////////////////////////////////////////////////////////////////////////////////
-  ///DECLARAÇÃO DE VARIAVEIS
+////////////////////////////////////////////////////////////////////////////////
+  ///DECLARAÇÃO DE VARIÁVEIS
   int qtdHamburguer = 0;
   int qtdBebida = 0;
+  int qtdCerveja = 0;
+  int qtdAqua = 0;
+  int qtdCocacola = 0;
+  int qtdFanta = 0;
   int qtdTotalItens = 0;
+  double valorCerveja = 0;
+  double valorAgua = 0;
+  double valorCocacola = 0;
+  double valorFanta = 0;
   double valorTotal = 0;
   double valorTaxaServico = 0;
   double valorHamburguer = 0;
   double valorBebida = 0;
   double valorDesconto = 0.10;
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
@@ -414,17 +427,27 @@ class _cartPageState extends State<cartPageB> {
 
           onTap: () {
             setState(() {
-              if (name == "Hamburguer") {
-                qtdHamburguer++;
-                valorHamburguer = preco_hamb * qtdHamburguer;
-              } else {
-                qtdBebida++;
-                valorBebida = preco_bebida * qtdBebida;
+              switch (name) {
+                case 'Heineken':
+                  qtdCerveja++;
+                  valorCerveja = preco_bebida * qtdCerveja;
+                  break;
+                case 'Agua':
+                  qtdAqua++;
+                  valorAgua = preco_bebida * qtdAqua;
+                  break;
+                case 'Coca-Cola':
+                  qtdCocacola++;
+                  valorCocacola = preco_bebida * qtdCocacola;
+                  break;
+                case 'Fanta':
+                  qtdFanta++;
+                  valorFanta = preco_bebida * qtdFanta;
+                  break;
               }
-              qtdTotalItens = qtdBebida + qtdHamburguer;
             });
 
-            valorTotal = valorHamburguer + valorBebida;
+            valorTotal = valorCerveja + valorAgua + valorCocacola + valorFanta;
             valorTaxaServico = valorTotal * 0.1;
           },
         ),
@@ -443,7 +466,7 @@ class _cartPageState extends State<cartPageB> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                name == "Hamburguer" ? "$qtdHamburguer" : "$qtdBebida",
+                name == "Heineken" ? "$qtdCerveja" : "$qtdAqua",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
