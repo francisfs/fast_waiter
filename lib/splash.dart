@@ -48,8 +48,10 @@ class InitState extends State<SplashScreen> {
           ),
           Center(
             child: Container(
-              child: Lottie.network(
-                  'https://assets1.lottiefiles.com/private_files/lf30_UlXgnV.json'),
+              child: Lottie.asset(
+                  "imagens/lottie/scan_menu.json"), // utilização por arquivo na pasta do app.
+              /*child: Lottie.network( utilização da animação pela URL
+                  'https://assets1.lottiefiles.com/private_files/lf30_UlXgnV.json'),*/
             ),
           )
         ],

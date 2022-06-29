@@ -143,10 +143,15 @@ class _successPageState extends State<successPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.check_circle,
-                    color: greenBtn,
-                    size: 200,
+                  GestureDetector(
+                    onTap: () {
+                      return_page_home();
+                    },
+                    child: Icon(
+                      Icons.check_circle,
+                      color: greenBtn,
+                      size: 200,
+                    ),
                   ),
                   SizedBox(
                     height: 20,

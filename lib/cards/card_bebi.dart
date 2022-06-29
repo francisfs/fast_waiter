@@ -1,10 +1,30 @@
 import 'package:fast_waiter/Style.dart';
+import 'package:fast_waiter/cards/card_cost.dart';
 import 'package:fast_waiter/home_page.dart';
 import 'package:fast_waiter/precos.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import '../sucess_page.dart';
+
+////////////////////////////////////////////////////////////////////////////////
+///DECLARAÇÃO DE VARIÁVEIS
+int qtdHamburguer = 0;
+int qtdBebida = 0;
+int qtdCerveja = 0;
+int qtdAqua = 0;
+int qtdCocacola = 0;
+int qtdFanta = 0;
+int qtdTotalItens = 0;
+double valorCerveja = 0;
+double valorAgua = 0;
+double valorCocacola = 0;
+double valorFanta = 0;
+double valorTotal = 0;
+double valorTaxaServico = 0;
+double valorHamburguer = 0;
+double valorBebida = 0;
+double valorDesconto = 0.10;
+////////////////////////////////////////////////////////////////////////////////
 
 class CartPageB extends StatelessWidget {
   @override
@@ -35,7 +55,7 @@ class _cartPageState extends State<cartPageB> {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 221, 117, 48),
+                    color: Color.fromARGB(255, 238, 238, 238),
                     image: DecorationImage(
                         image: AssetImage("imagens/bebida.png"),
                         fit: BoxFit.cover),
@@ -312,21 +332,45 @@ class _cartPageState extends State<cartPageB> {
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: openSuccessPage,
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(40)),
-                          color: greenBtn,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: openSuccessPage,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Confirmar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          "Confirmar",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(40)),
+                            color: greenBtn,
+                          ),
+                          child: Text(
+                            "Limpar",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 20,
@@ -340,26 +384,6 @@ class _cartPageState extends State<cartPageB> {
       ),
     );
   }
-
-////////////////////////////////////////////////////////////////////////////////
-  ///DECLARAÇÃO DE VARIÁVEIS
-  int qtdHamburguer = 0;
-  int qtdBebida = 0;
-  int qtdCerveja = 0;
-  int qtdAqua = 0;
-  int qtdCocacola = 0;
-  int qtdFanta = 0;
-  int qtdTotalItens = 0;
-  double valorCerveja = 0;
-  double valorAgua = 0;
-  double valorCocacola = 0;
-  double valorFanta = 0;
-  double valorTotal = 0;
-  double valorTaxaServico = 0;
-  double valorHamburguer = 0;
-  double valorBebida = 0;
-  double valorDesconto = 0.10;
-////////////////////////////////////////////////////////////////////////////////
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(

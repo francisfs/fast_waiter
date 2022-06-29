@@ -158,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Container(
                             width: MediaQuery.of(context).size.width * 0.35,
-                            height: 165,
+                            height: 160,
                             padding: EdgeInsets.symmetric(
                                 vertical: 20, horizontal: 20),
                             decoration: BoxDecoration(
@@ -229,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                                       size: 14,
                                     ),
                                     Text(
-                                      "Sabor e Crocância inigualáveis ",
+                                      "",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 10),
                                     ),
@@ -355,7 +355,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("hamburguer", "Hamburguer"),
+                placesWidget("Hamburguer", "Hamburguer"),
                 SizedBox(
                   child: Text("*"),
                   height: 20,
@@ -383,8 +383,8 @@ class _HomePageState extends State<HomePage> {
     return Row(
       children: [
         Container(
-          height: 200,
-          width: 180,
+          height: 120,
+          width: 150,
           decoration: BoxDecoration(
               image: DecorationImage(image: AssetImage("imagens/$img.png"))),
         ),

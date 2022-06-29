@@ -6,6 +6,19 @@ import 'package:intl/intl.dart';
 
 import '../sucess_page.dart';
 
+/////////////////////////////////////////////////////////////////////////////////
+///DECLARAÇÃO DE VARIAVEIS
+int qtdCostela = 0;
+int qtdBebida = 0;
+int qtdTotalItens = 0;
+double valorTotal = 0;
+double valorTaxaServico = 0;
+double valorCostela = 0;
+double valorBebida = 0;
+double valorDesconto = 0.10;
+int teste = 10;
+//////////////////////////////////////////////////////////////////////////
+
 class CartPageC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -37,7 +50,7 @@ class _cartPageState extends State<cartPageC> {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
-                        image: AssetImage("imagens/hamburguer.png"),
+                        image: AssetImage("imagens/costela.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -82,7 +95,7 @@ class _cartPageState extends State<cartPageC> {
                               height: 20,
                             ),
                             Text(
-                              "Hamburguer", //Texto da imagem
+                              "Costela Assada", //Texto da imagem
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -144,7 +157,7 @@ class _cartPageState extends State<cartPageC> {
                       height: 15,
                     ),
                     Text(
-                      "O melhor Hamburguer da região",
+                      "Costela ao molho caseiro Barbecue",
                       style: TextStyle(
                           color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
@@ -181,7 +194,7 @@ class _cartPageState extends State<cartPageC> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("hamburguer", "Hamburguer", preco_hamb, 0),
+                    placesWidget("costela", "Costela", preco_hamb, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -289,7 +302,7 @@ class _cartPageState extends State<cartPageC> {
                           ),
                         ),
                         Text(
-                          "R\$ $valorTotal,00",
+                          "R\$ $valorTotal",
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
@@ -335,18 +348,6 @@ class _cartPageState extends State<cartPageC> {
       ),
     );
   }
-
-/////////////////////////////////////////////////////////////////////////////////
-  ///DECLARAÇÃO DE VARIAVEIS
-  int qtdHamburguer = 0;
-  int qtdBebida = 0;
-  int qtdTotalItens = 0;
-  double valorTotal = 0;
-  double valorTaxaServico = 0;
-  double valorHamburguer = 0;
-  double valorBebida = 0;
-  double valorDesconto = 0.10;
-//////////////////////////////////////////////////////////////////////////
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
@@ -396,35 +397,35 @@ class _cartPageState extends State<cartPageC> {
                 ],
               ),
               Text(
-                "  R\$ $vlrItem,00",
+                "  R\$ $vlrItem",
                 style: TextStyle(fontSize: 12),
               )
             ],
           ),
         ),
         SizedBox(
-          width: 10,
+          width: 8,
         ),
         GestureDetector(
           /////////////////////////////ICONE INCREMENTO
           child: Icon(
             Icons.add_circle,
-            size: 40,
+            size: 35,
           ),
 
           onTap: () {
             setState(() {
-              if (name == "Hamburguer") {
-                qtdHamburguer++;
-                valorHamburguer = preco_hamb * qtdHamburguer;
+              if (name == "costela") {
+                qtdCostela++;
+                valorCostela = preco_costela * qtdCostela;
               } else {
                 qtdBebida++;
                 valorBebida = preco_bebida * qtdBebida;
               }
-              qtdTotalItens = qtdBebida + qtdHamburguer;
+              qtdTotalItens = qtdBebida + qtdCostela;
             });
 
-            valorTotal = valorHamburguer + valorBebida;
+            valorTotal = valorCostela + valorBebida;
             valorTaxaServico = valorTotal * 0.1;
           },
         ),
@@ -443,7 +444,7 @@ class _cartPageState extends State<cartPageC> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                name == "Hamburguer" ? "$qtdHamburguer" : "$qtdBebida",
+                name == "costela" ? "$qtdCostela" : "$qtdBebida",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
