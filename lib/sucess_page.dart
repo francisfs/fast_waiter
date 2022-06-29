@@ -79,7 +79,7 @@ class _successPageState extends State<successPage> {
                             height: 20,
                           ),
                           Text(
-                            "Parabéns pedido realizado com sucesso",
+                            "Pedido Realizado com Sucesso",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,

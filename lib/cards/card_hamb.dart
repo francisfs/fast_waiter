@@ -396,7 +396,7 @@ class _cartPageState extends State<cartPageH> {
                 ],
               ),
               Text(
-                "  R\$ $vlrItem,00",
+                "  R\$ $vlrItem",
                 style: TextStyle(fontSize: 12),
               )
             ],

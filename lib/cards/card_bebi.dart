@@ -294,7 +294,7 @@ class _cartPageState extends State<cartPageB> {
                           ),
                         ),
                         Text(
-                          "R\$ $valorTotal,00",
+                          "R\$ $valorTotal",
                           style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontSize: 16,
@@ -409,7 +409,7 @@ class _cartPageState extends State<cartPageB> {
                 ],
               ),
               Text(
-                "  R\$ $vlrItem,00",
+                "  R\$ $vlrItem",
                 style: TextStyle(fontSize: 12),
               )
             ],
@@ -449,6 +449,7 @@ class _cartPageState extends State<cartPageB> {
 
             valorTotal = valorCerveja + valorAgua + valorCocacola + valorFanta;
             valorTaxaServico = valorTotal * 0.1;
+            qtdTotalItens = qtdAqua + qtdCerveja + qtdCocacola + qtdFanta;
           },
         ),
         SizedBox(
@@ -466,7 +467,8 @@ class _cartPageState extends State<cartPageB> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                name == "Heineken" ? "$qtdCerveja" : "$qtdAqua",
+                incremenQtd('$name').toString(),
+                //name == "Heineken" ? "$qtdCerveja" : "$qtdAqua",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
@@ -474,6 +476,28 @@ class _cartPageState extends State<cartPageB> {
         )
       ],
     );
+  }
+
+  int incremenQtd(String name) {
+    int retornoqtd = 0;
+    switch (name) {
+      case 'Heineken':
+        qtdCerveja;
+        retornoqtd = qtdCerveja;
+        break;
+      case 'Agua':
+        retornoqtd = qtdAqua;
+        break;
+      case 'Coca-Cola':
+        retornoqtd = qtdCocacola;
+        break;
+      case 'Fanta':
+        retornoqtd = qtdFanta;
+
+        break;
+    }
+
+    return retornoqtd;
   }
 
   void openSuccessPage() {

@@ -367,7 +367,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("bebidas", "Bebidas"),
+                placesWidget("bebida", "Bebidas"),
                 SizedBox(
                   height: 20,
                 ),
