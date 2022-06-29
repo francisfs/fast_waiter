@@ -34,8 +34,7 @@ class _successPageState extends State<successPage> {
               decoration: BoxDecoration(
                   color: blue,
                   image: DecorationImage(
-                      image: AssetImage("asset/images/hotelBig.png"),
-                      fit: BoxFit.cover),
+                      image: AssetImage("imagens/logo.png"), fit: BoxFit.cover),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40))),
@@ -79,7 +78,7 @@ class _successPageState extends State<successPage> {
                             height: 20,
                           ),
                           Text(
-                            "Pedido Realizado com Sucesso",
+                            "",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -88,7 +87,7 @@ class _successPageState extends State<successPage> {
                           SizedBox(
                             height: 10,
                           ),
-                          Row(
+                          /*Row(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Icon(
@@ -117,21 +116,21 @@ class _successPageState extends State<successPage> {
                                     color: Colors.white, fontSize: 13),
                               )
                             ],
-                          )
+                          )*/
                         ],
                       ),
                       Container(
-                        height: 70,
-                        width: 70,
+                        height: 0,
+                        width: 0,
                         decoration: BoxDecoration(
                             shape: BoxShape.circle, color: Colors.white),
                         child: Center(
-                          child: Icon(
+                            /*child: Icon(
                             Icons.sentiment_satisfied_alt,
                             color: Color.fromARGB(255, 229, 212, 212),
                             size: 35,
-                          ),
-                        ),
+                          ),*/
+                            ),
                       )
                     ],
                   ),

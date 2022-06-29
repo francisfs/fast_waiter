@@ -310,7 +310,7 @@ class _cartPageState extends State<cartPageH> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    SizedBox(                        
                       height: 25,
                     ),
                     Text(
