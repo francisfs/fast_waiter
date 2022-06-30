@@ -26,7 +26,7 @@ class InitState extends State<SplashScreen> {
 
   homeRoute() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => HomePage()));
+        context, MaterialPageRoute(builder: (context) => QRCodePage()));
   }
 
   @override

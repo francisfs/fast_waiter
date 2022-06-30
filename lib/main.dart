@@ -21,7 +21,7 @@ void main() {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false, //retirar a barra debug
-    home: (QRCodePage()),
+    home: (SplashScreen()),
   ));
 }
 //(HomePage()),

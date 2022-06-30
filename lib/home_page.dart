@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: AssetImage(
-                                      "imagens/yakisoba.png",
+                                      "imagens/Yakisoba.png",
                                     )),
                                   ),
                                 ),
@@ -184,7 +184,7 @@ class _HomePageState extends State<HomePage> {
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
                                               image: AssetImage(
-                                                  "imagens/frango.png"))),
+                                                  "imagens/Frango.png"))),
                                     ),
                                   ),
                                 ),
@@ -272,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                                           decoration: BoxDecoration(
                                               image: DecorationImage(
                                                   image: AssetImage(
-                                                      "imagens/feijoada.png"))),
+                                                      "imagens/Feijoada.png"))),
                                         ),
                                       ),
                                     ),
@@ -360,14 +360,14 @@ class _HomePageState extends State<HomePage> {
                   child: Text("*"),
                   height: 20,
                 ),
-                placesWidget("costela", "Costela Assada"),
+                placesWidget("Costela", "Costela Assada"),
                 SizedBox(
                   height: 20,
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                placesWidget("bebida", "Bebidas"),
+                placesWidget("Bebida", "Bebidas"),
                 SizedBox(
                   height: 20,
                 ),

@@ -57,9 +57,9 @@ class _cartPageState extends State<cartPageB> {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 238, 238, 238),
                     image: DecorationImage(
-                        image: AssetImage("imagens/bebida.png"),
+                        image: AssetImage("imagens/Bebida.png"),
                         fit: BoxFit.cover),
-                    borderRadius: BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
                         bottomRight: Radius.circular(40))),
                 child: Column(
@@ -198,19 +198,19 @@ class _cartPageState extends State<cartPageB> {
                         )
                       ],
                     ),
-                    placesWidget("cerveja", "Heineken", preco_bebida, 0),
+                    placesWidget("Cerveja", "Heineken", preco_bebida, 0),
                     SizedBox(
                       height: 15,
                     ),
-                    placesWidget("agua", "Agua", preco_hamb, 0),
+                    placesWidget("Agua", "Agua", preco_hamb, 0),
                     SizedBox(
                       height: 15,
                     ),
-                    placesWidget("coca", "Coca-Cola", preco_bebida, 0),
+                    placesWidget("Coca", "Coca-Cola", preco_bebida, 0),
                     SizedBox(
                       height: 15,
                     ),
-                    placesWidget("fanta", "Fanta", preco_bebida, 0),
+                    placesWidget("Fanta", "Fanta", preco_bebida, 0),
                     SizedBox(
                       height: 15,
                     ),

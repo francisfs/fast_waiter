@@ -197,7 +197,7 @@ class _cartPageState extends State<cartPageY> {
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("bebida", " Bebida", preco_bebida, 0),
+                    placesWidget("Bebida", " Bebida", preco_bebida, 0),
                     SizedBox(
                       height: 5,
                     ),
