@@ -1,8 +1,22 @@
 import 'package:fast_waiter/Style.dart';
 import 'package:fast_waiter/home_page.dart';
+import 'package:fast_waiter/precos.dart';
 import 'package:flutter/material.dart';
 
 import '../sucess_page.dart';
+
+////////////////////////////////////////////////////////////////////////////////
+///DECLARAÇÃO DE VARIAVEIS
+int qtdYakisoba = 0;
+int qtdBebida = 0;
+int qtdTotalItens = 0;
+double valorTotal = 0;
+double valorTaxaServico = 0;
+double valorYakisoba = 0;
+double valorBebida = 0;
+double valorDesconto = 0.10;
+String nome = "Yakisoba";
+////////////////////////////////////////////////////////////////////////////////
 
 class CartPageY extends StatelessWidget {
   @override
@@ -22,6 +36,8 @@ class cartPageY extends StatefulWidget {
 class _cartPageState extends State<cartPageY> {
   @override
   Widget build(BuildContext context) {
+    var onPressed;
+    var child;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -31,9 +47,9 @@ class _cartPageState extends State<cartPageY> {
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: blue,
+                    color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
-                        image: AssetImage("imagens/yakisoba.png"),
+                        image: AssetImage("imagens/$nome.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -78,7 +94,7 @@ class _cartPageState extends State<cartPageY> {
                               height: 20,
                             ),
                             Text(
-                              "Hamburguer",
+                              "$nome", //Texto da imagem
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -88,9 +104,11 @@ class _cartPageState extends State<cartPageY> {
                               height: 10,
                             ),
                             Row(
+                              //Estrelas de avaliações do do cabeçalho
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Icon(
+                                  //icones de estrela
                                   Icons.star,
                                   color: Colors.white,
                                 ),
@@ -126,7 +144,7 @@ class _cartPageState extends State<cartPageY> {
                               shape: BoxShape.circle, color: Colors.white),
                           child: Center(
                             child: Icon(
-                              Icons.favorite,
+                              Icons.favorite, //icone de favorito
                               color: Colors.redAccent,
                               size: 35,
                             ),
@@ -138,8 +156,9 @@ class _cartPageState extends State<cartPageY> {
                       height: 15,
                     ),
                     Text(
-                      "Lorem ipsum dolar sits amet is used in print industry",
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      "O melhor $nome da região",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
                   ],
                 ),
@@ -155,7 +174,7 @@ class _cartPageState extends State<cartPageY> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Seu pedido",
+                          "Seu Pedido",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w700),
                         ),
@@ -174,11 +193,11 @@ class _cartPageState extends State<cartPageY> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("sushi", "Row Platter"),
+                    placesWidget("$nome", "$nome", preco_yakisoba, 0),
                     SizedBox(
                       height: 5,
                     ),
-                    placesWidget("suchi2", "Sushi Platter"),
+                    placesWidget("bebida", " Bebida", preco_bebida, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -186,12 +205,12 @@ class _cartPageState extends State<cartPageY> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total (3 items)",
+                          "Quantidade Total:",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 18),
                         ),
                         Text(
-                          "\$45",
+                          "$qtdTotalItens unidade(s)",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 16),
                         )
@@ -204,14 +223,12 @@ class _cartPageState extends State<cartPageY> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxas",
+                          "Valor Parcial:",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                              color: Colors.grey),
+                              fontWeight: FontWeight.w700, fontSize: 18),
                         ),
                         Text(
-                          "\$2.1",
+                          "R\$ $valorTotal",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -226,14 +243,14 @@ class _cartPageState extends State<cartPageY> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "+Taxa de serviço",
+                          "+Taxas de serviço 10% (Opcional)",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "\$3.1",
+                          "R\$ $valorTaxaServico",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -248,18 +265,18 @@ class _cartPageState extends State<cartPageY> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Descontos",
+                          "+Taxa de entrega",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
                               color: Colors.grey),
                         ),
                         Text(
-                          "-\$6.1",
+                          "Gratis",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
-                              color: Colors.grey),
+                              color: Color.fromARGB(255, 93, 173, 67)),
                         )
                       ],
                     ),
@@ -269,6 +286,13 @@ class _cartPageState extends State<cartPageY> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        /*Text(
+                          "R\$ ***",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: Colors.grey),
+                        )*/
                         Text(
                           "Total a Pagar",
                           style: TextStyle(
@@ -277,11 +301,11 @@ class _cartPageState extends State<cartPageY> {
                           ),
                         ),
                         Text(
-                          "\$102",
+                          "R\$ $valorTotal",
                           style: TextStyle(
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w700,
                               fontSize: 16,
-                              color: Colors.grey),
+                              color: Color.fromARGB(255, 237, 6, 6)),
                         )
                       ],
                     ),
@@ -295,22 +319,59 @@ class _cartPageState extends State<cartPageY> {
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: openSuccessPage,
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(40)),
-                          color: greenBtn,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            openSuccessPage();
+                            clear();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Confirmar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          "Confirmar",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
-                    )
+                        GestureDetector(
+                          onTap: () {
+                            clear();
+                            setState(() {});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Limpar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                   ],
                 ),
               )
@@ -321,7 +382,7 @@ class _cartPageState extends State<cartPageY> {
     );
   }
 
-  Row placesWidget(String img, String name) {
+  Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
       children: [
         Container(
@@ -338,6 +399,7 @@ class _cartPageState extends State<cartPageY> {
                 "$name",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
+              Text("*"),
               Row(
                 children: [
                   Icon(
@@ -368,7 +430,7 @@ class _cartPageState extends State<cartPageY> {
                 ],
               ),
               Text(
-                "Lorem ipsum sits dolar amet is for publishing",
+                "  R\$ $vlrItem",
                 style: TextStyle(fontSize: 12),
               )
             ],
@@ -376,6 +438,32 @@ class _cartPageState extends State<cartPageY> {
         ),
         SizedBox(
           width: 10,
+        ),
+        GestureDetector(
+          /////////////////////////////ICONE INCREMENTO
+          child: Icon(
+            Icons.add_circle,
+            size: 25,
+          ),
+
+          onTap: () {
+            setState(() {
+              if (name == "$nome") {
+                qtdYakisoba++;
+                valorYakisoba = preco_yakisoba * qtdYakisoba;
+              } else {
+                qtdBebida++;
+                valorBebida = preco_bebida * qtdBebida;
+              }
+              qtdTotalItens = qtdBebida + qtdYakisoba;
+            });
+
+            valorTotal = valorYakisoba + valorBebida;
+            valorTaxaServico = valorTotal * 0.1;
+          },
+        ),
+        SizedBox(
+          width: 15,
         ),
         Row(
           children: [
@@ -389,7 +477,7 @@ class _cartPageState extends State<cartPageY> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                "1",
+                name == "$nome" ? "$qtdYakisoba" : "$qtdBebida",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
@@ -407,5 +495,15 @@ class _cartPageState extends State<cartPageY> {
   void return_page_home() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
+  void clear() {
+    qtdYakisoba = 0;
+    qtdBebida = 0;
+    qtdTotalItens = 0;
+    valorTotal = 0;
+    valorTaxaServico = 0;
+    valorYakisoba = 0;
+    valorBebida = 0;
   }
 }

@@ -5,6 +5,19 @@ import 'package:flutter/material.dart';
 
 import '../sucess_page.dart';
 
+////////////////////////////////////////////////////////////////////////////////
+///DECLARAÇÃO DE VARIAVEIS
+int qtdFeijoada = 0;
+int qtdBebida = 0;
+int qtdTotalItens = 0;
+double valorTotal = 0;
+double valorTaxaServico = 0;
+double valorFeijoada = 0;
+double valorBebida = 0;
+double valorDesconto = 0.10;
+String nome = "Feijoada";
+////////////////////////////////////////////////////////////////////////////////
+
 class CartPageF extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,7 +49,7 @@ class _cartPageState extends State<cartPageF> {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
-                        image: AssetImage("imagens/feijoada.png"),
+                        image: AssetImage("imagens/$nome.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -81,7 +94,7 @@ class _cartPageState extends State<cartPageF> {
                               height: 20,
                             ),
                             Text(
-                              "Costela Assada", //Texto da imagem
+                              "$nome", //Texto da imagem
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -143,7 +156,7 @@ class _cartPageState extends State<cartPageF> {
                       height: 15,
                     ),
                     Text(
-                      "Costela ao molho caseiro Barbecue",
+                      "O melhor $nome da região",
                       style: TextStyle(
                           color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
@@ -180,7 +193,7 @@ class _cartPageState extends State<cartPageF> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("feijoada", "Feijoada", preco_feijo, 0),
+                    placesWidget("$nome", "$nome", preco_feijo, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -306,21 +319,55 @@ class _cartPageState extends State<cartPageF> {
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: openSuccessPage,
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(40)),
-                          color: greenBtn,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            openSuccessPage();
+                            clear();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Confirmar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          "Confirmar",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
+                        GestureDetector(
+                          onTap: () {
+                            clear();
+                            setState(() {});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Limpar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 20,
@@ -334,18 +381,6 @@ class _cartPageState extends State<cartPageF> {
       ),
     );
   }
-
-/////////////////////////////////////////////////////////////////////////////////
-  ///DECLARAÇÃO DE VARIAVEIS
-  int qtdCostela = 0;
-  int qtdBebida = 0;
-  int qtdTotalItens = 0;
-  double valorTotal = 0;
-  double valorTaxaServico = 0;
-  double valorFeijoada = 0;
-  double valorBebida = 0;
-  double valorDesconto = 0.10;
-//////////////////////////////////////////////////////////////////////////
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
@@ -408,19 +443,19 @@ class _cartPageState extends State<cartPageF> {
           /////////////////////////////ICONE INCREMENTO
           child: Icon(
             Icons.add_circle,
-            size: 40,
+            size: 25,
           ),
 
           onTap: () {
             setState(() {
-              if (name == "feijoada") {
-                qtdCostela++;
-                valorFeijoada = preco_feijo * qtdCostela;
+              if (name == "$nome") {
+                qtdFeijoada++;
+                valorFeijoada = preco_feijo * qtdFeijoada;
               } else {
                 qtdBebida++;
                 valorBebida = preco_bebida * qtdBebida;
               }
-              qtdTotalItens = qtdBebida + qtdCostela;
+              qtdTotalItens = qtdBebida + qtdFeijoada;
             });
 
             valorTotal = valorFeijoada + valorBebida;
@@ -442,7 +477,7 @@ class _cartPageState extends State<cartPageF> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                name == "Hamburguer" ? "$qtdCostela" : "$qtdBebida",
+                name == "$nome" ? "$qtdFeijoada" : "$qtdBebida",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
@@ -460,5 +495,15 @@ class _cartPageState extends State<cartPageF> {
   void return_page_home() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
+  void clear() {
+    qtdFeijoada = 0;
+    qtdBebida = 0;
+    qtdTotalItens = 0;
+    valorTotal = 0;
+    valorTaxaServico = 0;
+    valorFeijoada = 0;
+    valorBebida = 0;
   }
 }

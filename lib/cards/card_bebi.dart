@@ -8,7 +8,7 @@ import '../sucess_page.dart';
 
 ////////////////////////////////////////////////////////////////////////////////
 ///DECLARAÇÃO DE VARIÁVEIS
-int qtdHamburguer = 0;
+
 int qtdBebida = 0;
 int qtdCerveja = 0;
 int qtdAqua = 0;
@@ -21,7 +21,7 @@ double valorCocacola = 0;
 double valorFanta = 0;
 double valorTotal = 0;
 double valorTaxaServico = 0;
-double valorHamburguer = 0;
+
 double valorBebida = 0;
 double valorDesconto = 0.10;
 ////////////////////////////////////////////////////////////////////////////////
@@ -356,18 +356,25 @@ class _cartPageState extends State<cartPageB> {
                         SizedBox(
                           width: 20,
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 15, horizontal: 50),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            color: greenBtn,
-                          ),
-                          child: Text(
-                            "Limpar",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700),
+                        GestureDetector(
+                          onTap: () {
+                            clear();
+                            setState(() {});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Limpar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
                           ),
                         ),
                       ],
@@ -532,5 +539,20 @@ class _cartPageState extends State<cartPageB> {
   void return_page_home() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
+  void clear() {
+    qtdBebida = 0;
+    qtdCerveja = 0;
+    qtdAqua = 0;
+    qtdCocacola = 0;
+    qtdFanta = 0;
+    qtdTotalItens = 0;
+    valorCerveja = 0;
+    valorAgua = 0;
+    valorCocacola = 0;
+    valorFanta = 0;
+    valorTotal = 0;
+    valorTaxaServico = 0;
   }
 }

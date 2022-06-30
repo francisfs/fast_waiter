@@ -76,16 +76,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - imagens/feijoada.png
+     - imagens/Feijoada.png
      - imagens/Hamburguer.png
-     - imagens/frango.png
+     - imagens/Frango.png
      - imagens/logo.png
-     - imagens/costela.png
-     - imagens/bebida.png
-     - imagens/agua.png
-     - imagens/cerveja.png
-     - imagens/coca.png
-     - imagens/fanta.png
+     - imagens/Costela.png
+     - imagens/Bebida.png
+     - imagens/Agua.png
+     - imagens/Yakisoba.png
+     - imagens/Cerveja.png
+     - imagens/Coca.png
+     - imagens/Fanta.png
      - imagens/sucesso.png
      - imagens/lottie/scan_menu.json
 

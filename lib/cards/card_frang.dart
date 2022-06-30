@@ -1,9 +1,23 @@
 import 'package:fast_waiter/Style.dart';
+import 'package:fast_waiter/cards/card_yaki.dart';
 import 'package:fast_waiter/home_page.dart';
 import 'package:fast_waiter/precos.dart';
 import 'package:flutter/material.dart';
 
 import '../sucess_page.dart';
+
+////////////////////////////////////////////////////////////////////////////////
+///DECLARAÇÃO DE VARIAVEIS
+int qtdFrango = 0;
+int qtdBebida = 0;
+int qtdTotalItens = 0;
+double valorTotal = 0;
+double valorTaxaServico = 0;
+double valorFrango = 0;
+double valorBebida = 0;
+double valorDesconto = 0.10;
+String nome = "Frango";
+////////////////////////////////////////////////////////////////////////////////
 
 class CartPage extends StatelessWidget {
   @override
@@ -41,7 +55,7 @@ class _cartPageState extends State<cartPageFr> {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
-                        image: AssetImage("imagens/frango.png"),
+                        image: AssetImage("imagens/$nome.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -86,7 +100,7 @@ class _cartPageState extends State<cartPageFr> {
                               height: 20,
                             ),
                             Text(
-                              "Frango Frito", //Texto da imagem
+                              "$nome", //Texto da imagem
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -148,7 +162,7 @@ class _cartPageState extends State<cartPageFr> {
                       height: 15,
                     ),
                     Text(
-                      "O Frango Frito mais crocante e saboroso",
+                      "O melhor $nome da região",
                       style: TextStyle(
                           color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
@@ -185,7 +199,7 @@ class _cartPageState extends State<cartPageFr> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("frango", "Frango Frito", preco_frango, 0),
+                    placesWidget("$nome", "$nome", preco_frango, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -311,21 +325,55 @@ class _cartPageState extends State<cartPageFr> {
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: openSuccessPage,
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(40)),
-                          color: greenBtn,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            openSuccessPage();
+                            clear();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Confirmar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          "Confirmar",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
+                        GestureDetector(
+                          onTap: () {
+                            clear();
+                            setState(() {});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Limpar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 20,
@@ -339,18 +387,6 @@ class _cartPageState extends State<cartPageFr> {
       ),
     );
   }
-
-/////////////////////////////////////////////////////////////////////////////////
-  ///DECLARAÇÃO DE VARIAVEIS
-  int qtdFrango = 0;
-  int qtdBebida = 0;
-  int qtdTotalItens = 0;
-  double valorTotal = 0;
-  double valorTaxaServico = 0;
-  double valorFrango = 0;
-  double valorBebida = 0;
-  double valorDesconto = 0.10;
-//////////////////////////////////////////////////////////////////////////
 
   Row placesWidget(String img, String name, double vlrItem, int qtdItem) {
     return Row(
@@ -413,12 +449,12 @@ class _cartPageState extends State<cartPageFr> {
           /////////////////////////////ICONE INCREMENTO
           child: Icon(
             Icons.add_circle,
-            size: 40,
+            size: 25,
           ),
 
           onTap: () {
             setState(() {
-              if (name == "frango") {
+              if (name == "$nome") {
                 qtdFrango++;
                 valorFrango = preco_frango * qtdFrango;
               } else {
@@ -447,7 +483,7 @@ class _cartPageState extends State<cartPageFr> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                name == "frango" ? "$qtdFrango" : "$qtdBebida",
+                name == "$nome" ? "$qtdFrango" : "$qtdBebida",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
@@ -465,5 +501,15 @@ class _cartPageState extends State<cartPageFr> {
   void return_page_home() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
+  void clear() {
+    qtdFrango = 0;
+    qtdBebida = 0;
+    qtdTotalItens = 0;
+    valorTotal = 0;
+    valorTaxaServico = 0;
+    valorFrango = 0;
+    valorBebida = 0;
   }
 }

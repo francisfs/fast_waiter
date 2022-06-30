@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../sucess_page.dart';
 
-/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 ///DECLARAÇÃO DE VARIAVEIS
 int qtdCostela = 0;
 int qtdBebida = 0;
@@ -16,8 +16,8 @@ double valorTaxaServico = 0;
 double valorCostela = 0;
 double valorBebida = 0;
 double valorDesconto = 0.10;
-int teste = 10;
-//////////////////////////////////////////////////////////////////////////
+String nome = "Costela";
+////////////////////////////////////////////////////////////////////////////////
 
 class CartPageC extends StatelessWidget {
   @override
@@ -35,7 +35,7 @@ class cartPageC extends StatefulWidget {
 }
 
 class _cartPageState extends State<cartPageC> {
-  @override
+ @override
   Widget build(BuildContext context) {
     var onPressed;
     var child;
@@ -50,7 +50,7 @@ class _cartPageState extends State<cartPageC> {
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 221, 117, 48),
                     image: DecorationImage(
-                        image: AssetImage("imagens/costela.png"),
+                        image: AssetImage("imagens/$nome.png"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
@@ -95,7 +95,7 @@ class _cartPageState extends State<cartPageC> {
                               height: 20,
                             ),
                             Text(
-                              "Costela Assada", //Texto da imagem
+                              "$nome", //Texto da imagem
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
@@ -157,7 +157,7 @@ class _cartPageState extends State<cartPageC> {
                       height: 15,
                     ),
                     Text(
-                      "Costela ao molho caseiro Barbecue",
+                      "O melhor $nome da região",
                       style: TextStyle(
                           color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
@@ -194,7 +194,7 @@ class _cartPageState extends State<cartPageC> {
                     SizedBox(
                       height: 20,
                     ),
-                    placesWidget("costela", "Costela", preco_hamb, 0),
+                    placesWidget("$nome", "$nome", preco_costela, 0),
                     SizedBox(
                       height: 5,
                     ),
@@ -310,7 +310,7 @@ class _cartPageState extends State<cartPageC> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    SizedBox(                        
                       height: 25,
                     ),
                     Text(
@@ -320,21 +320,55 @@ class _cartPageState extends State<cartPageC> {
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: openSuccessPage,
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(40)),
-                          color: greenBtn,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            openSuccessPage();
+                            clear();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Confirmar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          "Confirmar",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
+                        SizedBox(
+                          width: 20,
                         ),
-                      ),
+                        GestureDetector(
+                          onTap: () {
+                            clear();
+                            setState(() {});
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(40)),
+                              color: greenBtn,
+                            ),
+                            child: Text(
+                              "Limpar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: 20,
@@ -404,18 +438,18 @@ class _cartPageState extends State<cartPageC> {
           ),
         ),
         SizedBox(
-          width: 8,
+          width: 10,
         ),
         GestureDetector(
           /////////////////////////////ICONE INCREMENTO
           child: Icon(
             Icons.add_circle,
-            size: 35,
+            size: 25,
           ),
 
           onTap: () {
             setState(() {
-              if (name == "costela") {
+              if (name == "$nome") {
                 qtdCostela++;
                 valorCostela = preco_costela * qtdCostela;
               } else {
@@ -444,7 +478,7 @@ class _cartPageState extends State<cartPageC> {
                 border: Border.all(color: black),
               ),
               child: Text(
-                name == "costela" ? "$qtdCostela" : "$qtdBebida",
+                name == "$nome" ? "$qtdCostela" : "$qtdBebida",
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               ),
             ),
@@ -462,5 +496,15 @@ class _cartPageState extends State<cartPageC> {
   void return_page_home() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
+  }
+
+  void clear() {
+    qtdCostela = 0;
+    qtdBebida = 0;
+    qtdTotalItens = 0;
+    valorTotal = 0;
+    valorTaxaServico = 0;
+    valorCostela = 0;
+    valorBebida = 0;
   }
 }
