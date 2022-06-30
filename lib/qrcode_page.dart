@@ -14,6 +14,16 @@ class QRCodePage extends StatefulWidget {
 class _QRCodePageState extends State<QRCodePage> {
   String ticket = '';
 
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  startTimer() async {
+    var duration = Duration(seconds: 3, milliseconds: 900);
+    return new Timer(duration, homeRoute);
+  }
+
   readQRCode() async {
     String code = await FlutterBarcodeScanner.scanBarcode(
       "#FFFFFF",
@@ -22,6 +32,11 @@ class _QRCodePageState extends State<QRCodePage> {
       ScanMode.QR,
     );
     //setState(() => ticket = code != '-1' ? code : 'Não validadedo');
+  }
+
+  homeRoute() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override
