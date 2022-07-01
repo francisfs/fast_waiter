@@ -31,7 +31,7 @@ class _QRCodePageState extends State<QRCodePage> {
       false,
       ScanMode.QR,
     );
-    //setState(() => ticket = code != '-1' ? code : 'Não validadedo');
+    setState(() => ticket = code == 'MESA 01' ? code : 'Não validado');
   }
 
   homeRoute() {
@@ -51,7 +51,7 @@ class _QRCodePageState extends State<QRCodePage> {
           Padding(
             padding: EdgeInsets.only(bottom: 24.0),
             child: Text(
-              'Ticket: $ticket',
+              'QrCode: $ticket',
               style: TextStyle(fontSize: 20),
             ),
           ),
