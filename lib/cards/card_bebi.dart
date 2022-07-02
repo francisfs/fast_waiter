@@ -1,12 +1,9 @@
 import 'package:fast_waiter/Style.dart';
-import 'package:fast_waiter/cards/card_cost.dart';
 import 'package:fast_waiter/home_page.dart';
 import 'package:fast_waiter/precos.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import '../sucess_page.dart';
 
-////////////////////////////////////////////////////////////////////////////////
 ///DECLARAÇÃO DE VARIÁVEIS
 
 int qtdBebida = 0;
@@ -59,7 +56,7 @@ class _cartPageState extends State<cartPageB> {
                     image: DecorationImage(
                         image: AssetImage("imagens/Bebida.png"),
                         fit: BoxFit.cover),
-                        borderRadius: BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40),
                         bottomRight: Radius.circular(40))),
                 child: Column(
@@ -409,7 +406,7 @@ class _cartPageState extends State<cartPageB> {
                 "$name",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
-              Text("*"),
+              Text(""),
               Row(
                 children: [
                   Icon(
