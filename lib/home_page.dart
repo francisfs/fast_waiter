@@ -20,6 +20,9 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
+            /*decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Colors.yellow, Colors.red, Colors.amber])),*/
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,13 +167,13 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30)),
-                                color: green,
+                                color: Colors.yellow,
                                 boxShadow: [
                                   BoxShadow(
                                       spreadRadius: 0,
                                       offset: Offset(0, 10),
                                       blurRadius: 0,
-                                      color: green.withOpacity(0.4))
+                                      color: Colors.yellow.withOpacity(0.4))
                                 ]),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -252,13 +255,14 @@ class _HomePageState extends State<HomePage> {
                                 decoration: BoxDecoration(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(30)),
-                                    color: black,
+                                    color: Colors.purple.shade600,
                                     boxShadow: [
                                       BoxShadow(
                                           spreadRadius: 0,
                                           offset: Offset(0, 10),
                                           blurRadius: 0,
-                                          color: black.withOpacity(0.4))
+                                          color: Colors.purple.shade300
+                                              .withOpacity(0.4))
                                     ]),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

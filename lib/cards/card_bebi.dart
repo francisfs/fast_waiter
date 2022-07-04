@@ -161,7 +161,7 @@ class _cartPageState extends State<cartPageB> {
                       height: 15,
                     ),
                     Text(
-                      "**********************",
+                      "",
                       style: TextStyle(
                           color: Color.fromARGB(255, 28, 27, 27), fontSize: 12),
                     )
